@@ -88,3 +88,18 @@ void rat::printrat() const
 {
     cout << this->num << "/" << this->den << endl;
 }
+
+int main()
+{
+    rat p;
+    rat q(1,6);
+    rat r = rat(5,9);
+    rat m = rat(10,-20);
+
+    p.printrat();
+    q.printrat();
+    r.printrat();
+    m.printrat();
+    
+    return 0;
+}
