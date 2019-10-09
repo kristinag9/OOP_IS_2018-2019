@@ -1,0 +1,50 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+class Employee
+{
+private:
+    struct
+    {
+        char first[16];
+        char last[16];
+    } name;
+    struct
+    {
+        double hours;
+        double salary;
+    } work;
+public:
+    void read();
+    void print() const;
+};
+
+void Employee::read()
+{
+    cout << "First name: ";
+    cin >> name.first;
+    cout << "Last name: ";
+    cin >> name.last;
+    cout << "Hours of work: ";
+    cin >> work.hours;
+    cout << "Salary for an hour: ";
+    cin >> work.salary;
+}
+
+void Employee::print() const
+{
+    cout << setiosflags(ios::fixed) << setprecision(2);
+    cout << name.first << " " << name.last << endl;
+    cout << work.hours * work.salary << endl;
+}
+
+int main()
+{
+    Employee x;
+    x.read();
+    x.print();
+
+    return 0;
+}
