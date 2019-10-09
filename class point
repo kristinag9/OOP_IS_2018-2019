@@ -1,0 +1,88 @@
+#include <iostream>
+
+using namespace std;
+
+class point2
+{
+private:
+    int x;
+    int y;
+public:
+    point2();
+    point2(int, int);
+    int get_x() const;
+    int get_y() const;
+    void print() const;
+}p1 = point2(1,4), p2(2,-7), p3(p1), p4 = p2;
+
+
+point2::point2()
+{
+    x = 0;
+    y = 0;
+}
+
+point2::point2(int a, int b)
+{
+    x = a;
+    y = b;
+}
+
+inline int point2::get_x() const
+{
+    return x;
+}
+
+inline int point2::get_y() const
+{
+    return y;
+}
+
+inline void point2::print() const
+{
+    cout << x << "," << y << endl;
+}
+
+class point3
+{
+private:
+    point2 p;
+    int z;
+public:
+    point3(int, int, int);
+    point2 get_p() const;
+    int get_z() const;
+    void print() const;
+};
+
+point3::point3(int a, int b, int c)
+{
+    p = point2(a,b);
+    z = c;
+}
+point2 point3::get_p() const
+{
+    return p;
+}
+int point3::get_z() const
+{
+    return z;
+}
+void point3::print() const
+{
+    p.print();
+    cout << "," << z << endl;
+}
+
+int main()
+{
+    p1.print();
+    p2.print();
+    p3.print();
+    p4.print();
+
+    point3 t(3,5,7);
+    t.print();
+    
+    return 0;
+}
