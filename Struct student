@@ -1,0 +1,51 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+const int NUM = 5;
+
+struct student
+{
+    int facnum;
+    char name[32];
+    double marks[NUM];
+};
+
+void read_student(student&);
+void print_student(const student&);
+void sorttable(student a[], int n);
+double average(const double*);
+
+void read_student(student& s)
+{
+    cout << "Faculty number: ";
+    cin >> s.facnum;
+    cin.sync();
+    cout << "Name: ";
+    cin.getline(s.name, 32);
+    for(int i = 0; i < NUM; i++)
+    {
+        cout << i << "-th mark: ";
+        cin >> s.marks[i];
+    }
+}
+
+void print_student(const student& stud)
+{
+    cout << setw(6) << stud.facnum << setw(30) << stud.name;
+    for(int i = 0; i < NUM; i++)
+    {
+        cout << setw(6) << stud.marks[i];
+    }
+}
+
+double average(const double* a)
+{
+    double s = 0;
+    for(int j = 0; j < NUM; j++)
+    {
+        s += a[j];
+    }
+    return s/NUM;
+}
