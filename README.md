@@ -1,2 +1,2 @@
 # Object-oriented programming
-Materials from the lectures and exercises at FMI.
+This repository contains exercises from the lectures of the Object-oriented programming course at FMI.
